@@ -1,8 +1,13 @@
 #include <iostream>
 #include <thread>
-#include <queue>
+#include <future>
+#include <vector>
 #include <mutex>
+#include <queue>
 #include <condition_variable>
+#include <cmath>
+
+std::mutex g_mtx;
 
 template <typename E>
 class BlockingQueue
@@ -57,34 +62,40 @@ class BlockingQueue
     }
 };
 
+int work(int id)
+{
+  std::unique_lock<std::mutex> lock(g_mtx);
+  std::cout << "Starting: " << id << std::endl;
+  lock.unlock();
+  int seconds = int((5.0 * rand())/RAND_MAX + 2);
+  std::this_thread::sleep_for(std::chrono::seconds(seconds));
+
+  return id;
+}
+
 int main(int argc, char **argv)
 {
+  BlockingQueue<std::shared_future<int>> futures(2); // at any time 3 threads are in working in pool
+  int num_pools = 20;
 
-  BlockingQueue<int> bqu(3);
-
-  std::thread t1([&](){
-    for(int i = 0; i < 10; i++)
+  std::thread td([&](){
+    for(int i = 0; i < num_pools; i++)
     {
-      std::cout << "Pushing: " << i << std::endl;
-      std::cout << "Queue size: " << bqu.size() << std::endl;
-      bqu.push(i);
+      std::shared_future<int> f = std::async(std::launch::async, work, i);
+      futures.push(f);
     }
-
-    std::cout << "Thread 1 exited" << std::endl;
   });
 
-  std::thread t2([&](){
-    for(int i = 0; i < 10; i++)
-    {
-      auto item = bqu.front();
-      bqu.pop();
-      std::cout << "Consumed: " << item << std::endl;
-    }
-    std::cout << "Thread 2 exited" << std::endl;
-  });
 
-  t1.join();
-  t2.join();
+  for(int i = 0; i < num_pools; i++)
+  {
+    auto f = futures.front();
+    auto result = f.get();
+    futures.pop();
+    std::cout << "Returned async future value: " << result << std::endl;
+  }
+
+  td.join();
 
   return 0;
 }
