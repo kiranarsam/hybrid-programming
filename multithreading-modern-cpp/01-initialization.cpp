@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "print_output.h"
 
 int main()
 {
@@ -20,10 +21,7 @@ int main()
 	std::vector<int> vec{4, 2, 3, 5, 1};              // std::vector variable with elements 4, 2, 3, 5, 1
 
 	std::cout << "vec = ";
-	for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
-	{
-		std::cout << *it << ", ";
-	}
-	std::cout << std::endl;
+	print_for<int>(vec);
 
+	return 0;
 }

@@ -3,15 +3,13 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include "print_output.h"
 
 int main() {
 	std::vector<int> vec{4, 2, 3, 5, 1};
 
 	std::cout << "Elements of vector: ";
-
-	for (auto elem : vec)
-		std::cout << elem << ", ";
-	std::cout << '\n';
+	print_forrange<int>(vec);
 
 	int radix = 3;
 
@@ -24,4 +22,5 @@ int main() {
 		});
 
 	std::cout << "The vector has " << n_even << " element(s) which are exact multiples of " << radix << '\n';
+	return 0;
 }

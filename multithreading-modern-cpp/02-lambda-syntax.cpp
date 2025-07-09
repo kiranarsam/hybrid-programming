@@ -18,4 +18,6 @@ int main()
 
 	std::cout << "Calling lam with argument 3\n";
 	std::cout << "Returns " << lam(3) << '\n';
+
+	return 0;
 }

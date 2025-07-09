@@ -22,4 +22,6 @@ int main()
 
 	std::cout << "Calling add_z_plus1(2) gives " << add_z_plus1(2) << '\n';
 	std::cout << "Calling add_z_plus1(5) gives " << add_z_plus1(5) << '\n';
+
+	return 0;
 }

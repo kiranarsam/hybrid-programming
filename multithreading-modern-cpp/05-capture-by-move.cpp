@@ -26,4 +26,6 @@ int main()
 	}();
 
 	std::cout << "After calling lambda, size in main = " << strings.size() << "\n\n";
+
+	return 0;
 }

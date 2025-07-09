@@ -8,4 +8,6 @@ int main()
 	[&n] (int arg) { return (++n * arg); }(3);
 
 	std::cout << "n = " << n << '\n';
+
+	return 0;
 }

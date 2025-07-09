@@ -17,4 +17,6 @@ int main()
 	std::cout << "Before calling func, vector has " << vec.size() << " elements\n";
 	func(vec);
 	std::cout << "After calling func, vector has " << vec.size() << " elements\n";
+
+	return 0;
 }

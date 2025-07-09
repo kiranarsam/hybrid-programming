@@ -24,4 +24,6 @@ int main()
 	//test2 = test1;
 	Test test4(std::move(test1));
 	test3 = std::move(test2);
+
+	return 0;
 }

@@ -38,4 +38,6 @@ int main()
 	std::cout << "After calling func, vector has " << vec.size() << " elements\n";
 
   func(std::move(std::vector<std::string>{"hello", "bye"})); // pass by rvalue reference
+
+	return 0;
 }
