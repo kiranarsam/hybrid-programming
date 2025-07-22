@@ -69,7 +69,7 @@ int main()
   auto logger = make_shared<ConsoleLogger>();
   auto c = make_shared<Car>(make_unique<Engine>(),logger);
 
-  std::cout << *logger << std::endl;
+  // std::cout << *logger << std::endl;
   std::cout << *c << std::endl;
 
   // using namespace boost;
