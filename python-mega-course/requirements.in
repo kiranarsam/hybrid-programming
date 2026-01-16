@@ -1,0 +1,9 @@
+# requirements.in
+# data science
+numpy
+# Desktop Simple GUI
+FreeSimpleGUI
+# python standalone exe
+pyinstaller
+# web package
+streamlit

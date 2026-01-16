@@ -1,0 +1,17 @@
+[
+    {
+        "question_tag" : "Which one is the captial city of UK?",
+        "alternative_tag" : ["Heathrow", "London", "Reading", "Southampton"],
+        "correct_tag" : 2
+    },
+    {
+        "question_tag" : "Which is the longest river on the planet?",
+        "alternative_tag" : ["pacific river", "amazon river", "nile river", "balstic river"],
+        "correct_tag" : 2
+    },
+    {
+        "question_tag" : "Larget land occupied by the Country?",
+        "alternative_tag" : ["China", "India", "USA", "Russia"],
+        "correct_tag" : 4
+    }
+]
