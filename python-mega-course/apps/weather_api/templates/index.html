@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Weather Details
+    </title>
+</head>
+<body>
+    <nav>
+        <a href="/about">About</a>
+        <a href="/contact-us"> Contact Us</a>
+        <a href="/store">Store</a>
+    </nav>
+    <h1>Welcome</h1>
+    <h2>This is Weather Report Page.</h2>
+    <p>Hello, this is home page.</p>
+    <img src="{{url_for('static', filename='cat.png')}}" alt="Cat Image" style="width: 200px;">
+    <br>
+    <p>{{ data | safe }}</p>
+    <br>
+    <a href="http://google.com">Google Page</a>
+</body>
+</html>

@@ -1,14 +1,7 @@
 ## Python Mega Course
 
-Small python projects
+Small ptthon projects
 https://dailypythonprojects.substack.com/
-
-## Python module index
-https://docs.python.org/3/py-modindex.html
-
-## pypi org
-Able to search all kind of python modules, instructions to install.
-https://pypi.org/
 
 Python project in separate virtual environment through command line argument.
 
@@ -74,3 +67,6 @@ Example Python 3.11.2
 2 - patch release
 11 - big features and backward compatibility
 3 - major version
+
+## PEP-8 Style Guide for Python Code
+https://peps.python.org/pep-0008/

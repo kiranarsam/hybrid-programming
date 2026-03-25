@@ -7,3 +7,5 @@ FreeSimpleGUI
 pyinstaller
 # web package
 streamlit
+# PDF file generator
+fpdf
