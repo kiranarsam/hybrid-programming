@@ -1,5 +1,5 @@
-# C++ Honda Standard Guideline Using Clang Format
-Based on honda c++ guidelines, fixing of alignment issues considered as top priority to meet source code in good shape.
+# C++ Standard Guideline Using Clang Format
+Based on c++ guidelines, fixing of alignment issues considered as top priority to meet source code in good shape.
 
 ## Pre-Requirements to install
 clang-format binary should be installed in linux build environment

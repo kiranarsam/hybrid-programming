@@ -19,11 +19,7 @@ CLANG_FORMAT=$PWD/.clang-format
 
 usage() {
   echo "Usage:"
-  echo "    ./align.sh [all]"
-  echo ""
-  echo "Options:"
-  echo ""
-  echo "  all         - Includes all"
+  echo "    ./align.sh [relative_folder_path]"
   echo ""
   exit 1
 }
@@ -58,13 +54,14 @@ else
   SRC_FOLDER="$PWD"
 fi
 
+# change directory into target folder
 pushd $SRC_FOLDER
-
 if [[ -n "$SRC_FOLDER" ]]; then
   align_all
 else
   usage
 fi
+# come back to current directory
 popd
 
 # Done
